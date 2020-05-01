@@ -1,3 +1,5 @@
+** This is unsupported. I may or may not maintain this repo in the future. I've written this code way back 2018 for a School Project in Computer Vision**
+
 Five different techniques (DCT, Quantization, Zigzag Scanning, RLE & DPCM, Entropy Coding(Huffman))
 
 Image compression is the way of scaling down the size of graphic images, without degrading the quality of image to unreasonable image. This scaling allows the user to store more images in a given memory space, which also helps to send or download the picture in internet faster.
