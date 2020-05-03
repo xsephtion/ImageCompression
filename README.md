@@ -1,4 +1,4 @@
-** This is unsupported. I may or may not maintain this repo in the future. I've written this code way back 2018 for a School Project in Computer Vision**
+# This is unsupported. I may or may not maintain this repo in the future. I've written this code way back 2018 for a School Project in Computer Vision
 
 Five different techniques (DCT, Quantization, Zigzag Scanning, RLE & DPCM, Entropy Coding(Huffman))
 
@@ -13,7 +13,9 @@ To start with Discrete Cosine Transform, remember the way of cosines in math? It
 The first step is we level of the images from -128 to 127, we subtract 128 from original entry. For example the first value of row (0, 0) is: 154 then we subtract 128 from it. It becomes 26. It goes from every matrix up to (8, 8) Then we get the DCT values or the HIGH INTENSITIES of an image for it to compare to the DCT table figure below. 
 
 
-![alt](<Images/1.png>)
+<p align="center">
+  <img width="300" height="300" src="Images/1.png">
+</p>
 
 We get the matrix of an 8x8 by multiplying the DCT coefficients to the matrix that we’ve subtracted from the original entry. The formula will be
 D = TMT’
@@ -26,13 +28,17 @@ To get the quantized value of a matrix we have this formula
 C = D/Q50
 Which C = the Quantized Value, D = Applied DCT table, Q50 = Standard Table of Quantization (Figure Below)(Level 50)
 
-![alt](<Images/2.png>)
+<p align="center">
+  <img width="400" height="300" src="Images/2.png">
+</p>
 
 This quantization can only be achieved by dividing each element in applied DCT matrix, by the corresponding element in quantization matrix.  Once we get the new value of matrix, you can notice that most of value is zero. And the top left of the matrix contains positive and negative integers. Those only positive and negative integer makes impact on our image. Because the argument is that with those positive and negative integers, we can have our own image back. This where the Zigzag scanning comes.
 
 To compress the file we use the Entropy Coding or The Huffman coding. We only get the positive and the negative values, then we remove or disregard the 0 values. But to find those, we use the zigzag scanning. Which does this (figure below)
 
-![alt](<Images/3.png>)
+<p align="center">
+  <img width="300" height="300" src="Images/3.png">
+</p>
 
 This scanning will order the quantized matrix to appear first, then the lower after.
 
@@ -43,7 +49,9 @@ After this method, to compress the file we use Entropy Coding. The technique we 
 
 As you can see in their properties: 
 
-![alt](<Images/4.png>)
+<p align="center">
+  <img width="700" height="500" src="Images/4.png">
+</p>
 
 As you can see, the compression rate of combined algorithms is 12.5 percent. (.125 x 65536 bytes  = 8192 bytes).
 
